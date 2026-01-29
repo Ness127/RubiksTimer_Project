@@ -90,6 +90,22 @@ __main_controller.py__: Define las rutas URL (Endpoints).
 
 @route('/save-time', methods=['POST']): Recibe el tiempo del timer.js, valida que sea correcto, llama a models/solve.py para guardarlo en la base de datos y devuelve "OK".
 
+## 📝 Roadmap / Lista de Tareas (MVP)
+
+Estado: `[ ]` Pendiente | `[x]` Completado
+
+| Estado | Tarea (Historia de Usuario) | Componente (MVC) | Responsable Sugerido | Prioridad |
+| :---: | :--- | :--- | :--- | :---: |
+| [ ] | **Configuración Base:** Crear entorno virtual y `requirements.txt` | Configuración | Todos | 🔥 Alta |
+| [ ] | **H.U. 1 - Cronómetro:** Crear lógica JS para iniciar/parar con barra espaciadora | Vista (`timer.js`) | Dev Frontend | 🔥 Alta |
+| [ ] | **H.U. 1 - Interfaz:** Diseño HTML/CSS del contador (números grandes) | Vista (`index.html`) | Dev Frontend | 🔥 Alta |
+| [ ] | **H.U. 2 - Scramble:** Algoritmo para generar mezclas aleatorias (ej: R U R'...) | Modelo (`solve.py`) | Dev Backend | 🟡 Media |
+| [ ] | **H.U. 3 - Persistencia:** Crear Modelo de Datos (Clase `Solve`) y conexión BD | Modelo (`models/`) | Dev Backend | 🔥 Alta |
+| [ ] | **H.U. 3 - Guardado:** Endpoint Flask `/save-time` que reciba el JSON del JS | Controlador | Dev Fullstack | 🔥 Alta |
+| [ ] | **Estadísticas:** Calcular media de 5 (Ao5) y mostrarla | Modelo + Vista | Dev Backend | 🟢 Baja |
+| [ ] | **Despliegue:** Subir la primera versión funcional a Render/Vercel | DevOps | Todos | 🟢 Baja |
+
+
 ## 🚀 Cómo empezar (Setup)
 
 TODO (Clonar repositorio, Crear entorno virtual, instalar dependencias y ejecutar el servidor)

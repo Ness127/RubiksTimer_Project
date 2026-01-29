@@ -92,19 +92,21 @@ __main_controller.py__: Define las rutas URL (Endpoints).
 
 ## 📝 Roadmap / Lista de Tareas (MVP)
 
-Estado: `[ ]` Pendiente | `[x]` Completado
+Marca las tareas completadas poniendo una `x` entre los corchetes o haciendo clic directamente en la vista previa de GitHub.
 
-| Estado | Tarea (Historia de Usuario) | Componente (MVC) | Responsable Sugerido | Prioridad |
-| :---: | :--- | :--- | :--- | :---: |
-| [ ] | **Configuración Base:** Crear entorno virtual y `requirements.txt` | Configuración | Todos | 🔥 Alta |
-| [ ] | **H.U. 1 - Cronómetro:** Crear lógica JS para iniciar/parar con barra espaciadora | Vista (`timer.js`) | Dev Frontend | 🔥 Alta |
-| [ ] | **H.U. 1 - Interfaz:** Diseño HTML/CSS del contador (números grandes) | Vista (`index.html`) | Dev Frontend | 🔥 Alta |
-| [ ] | **H.U. 2 - Scramble:** Algoritmo para generar mezclas aleatorias (ej: R U R'...) | Modelo (`solve.py`) | Dev Backend | 🟡 Media |
-| [ ] | **H.U. 3 - Persistencia:** Crear Modelo de Datos (Clase `Solve`) y conexión BD | Modelo (`models/`) | Dev Backend | 🔥 Alta |
-| [ ] | **H.U. 3 - Guardado:** Endpoint Flask `/save-time` que reciba el JSON del JS | Controlador | Dev Fullstack | 🔥 Alta |
-| [ ] | **Estadísticas:** Calcular media de 5 (Ao5) y mostrarla | Modelo + Vista | Dev Backend | 🟢 Baja |
-| [ ] | **Despliegue:** Subir la primera versión funcional a Render/Vercel | DevOps | Todos | 🟢 Baja |
+### 🔥 Prioridad Alta (Sprint 1 - Core)
+- [ ] **Configuración Base:** Crear entorno virtual y `requirements.txt` *(Responsable: Todos)*
+- [ ] **[Vista] Cronómetro JS:** Crear lógica en `timer.js` para iniciar/parar con barra espaciadora *(Responsable: Frontend)*
+- [ ] **[Vista] Interfaz:** Diseño HTML/CSS del contador con números grandes en `index.html` *(Responsable: Frontend)*
+- [ ] **[Modelo] Persistencia:** Crear clase `Solve` en `models/solve.py` y conexión a BD *(Responsable: Backend)*
+- [ ] **[Controlador] Guardado:** Endpoint Flask `/save-time` que reciba el JSON del JS *(Responsable: Fullstack)*
 
+### 🟡 Prioridad Media (Lógica de Negocio)
+- [ ] **[Modelo] Scramble:** Algoritmo en Python para generar mezclas aleatorias (ej: R U R'...) *(Responsable: Backend)*
+
+### 🟢 Prioridad Baja (Extras / Despliegue)
+- [ ] **[Modelo] Estadísticas:** Calcular media de 5 (Ao5) en `session.py` y mostrarla *(Responsable: Backend)*
+- [ ] **Despliegue:** Subir la primera versión funcional a Render/Vercel *(Responsable: DevOps)*
 
 ## 🚀 Cómo empezar (Setup)
 

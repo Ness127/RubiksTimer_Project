@@ -7,39 +7,42 @@ Este proyecto sigue una arquitectura **MVC (Modelo-Vista-Controlador)** y una me
 ## 📂 Estructura del Proyecto
 Para facilitar el trabajo en equipo, hemos dividido el código siguiendo el patrón MVC. Por favor, respetad la ubicación de los ficheros:
 
+``text
 rubikstimer_project/
 ├── app/
-|   ├── __init__.py   → Inicializador de la app
-|   ├── config.py     → Configuración (Bases de datos, claves)
-│   |
-|   ├── models/       → [BACKEND] Lógica de datos (BD). Aquí van las Clases (Solve, Session).
-|       ├── __init__.py
-|       ├── solve.py
-|       └── session.py
-│   ├── templates/    → [FRONTEND] Vistas HTML. Usad Jinja2 para los datos dinámicos.
-|       ├── base.html
-|       ├── index.html
-|       └── stats.html
-│   ├── static/       → [FRONTEND] Archivos públicos (CSS, Imágenes y JS del cliente).
-│       ├── css/
-|       │   └── style.css
-|       ├── js/
-|       │   ├── timer.js   <-- Lógica del cronómetro (Cliente)
-|       │   └── stats.js
-|       └── img/
-│   └── controllers/  → [BACKEND] Rutas de Flask. Aquí se reciben las peticiones y se llama al   
-|       |                Modelo.
-|       ├── __init__.py
-|       └── main_controller.py             
-|
-├── run.py            → Punto de entrada. Ejecutar este archivo para iniciar el servidor local.
-├── requirements.txt  → Lista de dependencias. Si instalas algo nuevo, actualiza este fichero.
-└── .gitignore        → Configuración para ignorar archivos basura (no tocar sin avisar).
+│   ├── __init__.py           # Inicializador de la app (Factoría de aplicación)
+│   ├── config.py             # Configuración global (Bases de datos, claves secretas)
+│   │
+│   ├── models/               # [M] MODELO (Backend/Datos)
+│   │   ├── __init__.py
+│   │   ├── solve.py          # Clase 'Solve': define el intento (tiempo, scramble)
+│   │   └── session.py        # Clase 'Session': lógica de medias (Ao5, Ao12)
+│   │
+│   ├── templates/            # [V] VISTA (Frontend/HTML)
+│   │   ├── base.html         # Plantilla base (menú y estructura común)
+│   │   ├── index.html        # Página principal (Cronómetro)
+│   │   └── stats.html        # Página de estadísticas y gráficas
+│   │
+│   ├── static/               # [V] RECURSOS ESTÁTICOS (Frontend)
+│   │   ├── css/
+│   │   │   └── style.css     # Estilos visuales
+│   │   ├── js/
+│   │   │   ├── timer.js      # Lógica del cronómetro (Ejecutado en navegador)
+│   │   │   └── stats.js      # Renderizado de gráficas (Chart.js)
+│   │   └── img/
+│   │
+│   └── controllers/          # [C] CONTROLADOR (Backend/Rutas)
+│       ├── __init__.py
+│       └── main_controller.py # Define las rutas (@app.route) y conecta M con V
+│
+├── run.py                    # Punto de entrada (Ejecutar para iniciar servidor)
+├── requirements.txt          # Dependencias (Flask, SQLAlchemy, etc.)
+└── .gitignore                # Archivos ignorados por Git (no tocar)
 
 
 ## Guía Detallada de Ficheros y Carpetas
 
-1. Raíz del Proyecto (Gestión y Configuración)
+### 1. Raíz del Proyecto (Gestión y Configuración)
 Estos archivos son para la gestión del proyecto, no contienen lógica del cronómetro.
 
 .gitignore: Le dice a Git qué archivos NO subir al repositorio (como archivos temporales, carpetas de compilación __pycache__ o contraseñas locales). Es vital para evitar conflictos entre los 3 compañeros.
